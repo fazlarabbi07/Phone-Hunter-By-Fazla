@@ -1,13 +1,42 @@
+// UTILITY FUNCTIONS FOR OPERATION
+const spinner=(status)=>{
+    const spinnerMode=document.getElementById('spinner');
+    if(status==true)
+    {
+        
+        spinnerMode.classList.remove('d-none');
+    }
+    else
+    {
+        spinnerMode.classList.add('d-none'); 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 // Collecting Search Btn Queries 
 document.getElementById('btn-search').addEventListener('click',function(){
     
     const userField=document.getElementById('userSearchField');
     const userFieldValue=userField.value;
-    userField.value='';
+    // clearing user field data after taking their value 
+    userField.value=''; 
     // Clear the previous Looded data 
         const displayUserSearch=document.getElementById('displayUserSearch');
         displayUserSearch.innerHTML=``;
-    
+    spinner(true);
+
+
+
+
     // Calling loadAllMobileData (fetch)function 
     loadAllMobileData(userFieldValue);
 
@@ -29,7 +58,8 @@ const displayAllPhoneData=(allPhoneDatas)=>{
     if(allPhoneDatas.length==0)
        {
         noSerchFound.classList.remove('d-none');
-       
+       spinner(false);
+       return 0;
        }
     else
     {
@@ -56,8 +86,9 @@ const displayAllPhoneData=(allPhoneDatas)=>{
     
         `;
         allMobileParent.appendChild(allMobileChild);
-        
+        spinner(false);
         
     });
     
 }
+
