@@ -113,4 +113,3 @@ const eachMobile=(doubleData)=>{
     modalBody.appendChild(modalChild);
 
 }
-{/* <p>Storage:${doubleData.name.mainFeatures.storage}</p> */}
