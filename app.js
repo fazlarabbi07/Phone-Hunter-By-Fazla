@@ -12,16 +12,6 @@ const spinner=(status)=>{
     }
 }
 
-
-
-
-
-
-
-
-
-
-
 // Collecting Search Btn Queries 
 document.getElementById('btn-search').addEventListener('click',function(){
     
@@ -80,7 +70,7 @@ const displayAllPhoneData=(allPhoneDatas)=>{
                   <h5 class="card-title">${allPhoneData.phone_name}</h5>
                   <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                 </div>
-                <div><button id="btn-details" class="btn btn-primary px-4  m-3 w-50 fs-5">Details</button></div>
+                <div><button onclick="btnDetails('${allPhoneData.slug}')" class="btn btn-primary px-4  m-3 w-50 fs-5">Details</button></div>
               </div>
 
     
@@ -88,7 +78,31 @@ const displayAllPhoneData=(allPhoneDatas)=>{
         allMobileParent.appendChild(allMobileChild);
         spinner(false);
         
+        
     });
     
+    
+    
 }
+// Each Btn Details click
+const btnDetails=(slugId)=>{
+    
+    const specificSlug=slugId;
+    fetch(`https://openapi.programming-hero.com/api/phone/${specificSlug}`)
+    .then(response=>response.json())
+    .then(data=>eachMobile(data.data))
+    // data.data.image
+    //data.data.brand
+    //data.data.mainFeatures.storage
+    //data.data.mainFeatures.displaySize
+    //data.data.mainFeatures.chipSet
+    //data.data.mainFeatures.memory
+    //data.data.name.mainFeatures.sensors  array
+    //data.data.name.mainFeatures.storage
+    //data.data.name.releaseDate
 
+
+}
+const eachMobile=(doubleData)=>{
+    console.log(doubleData.brand);
+}
