@@ -95,7 +95,7 @@ const btnDetails=(slugId)=>{
 }
 const eachMobile=(doubleData)=>{
     //Phone Name
-    console.log(doubleData);
+    // console.log(doubleData);
     const detailsBtnModalLabel=document.getElementById('detailsBtnModalLabel');
     detailsBtnModalLabel.innerText=doubleData.name;
     const modalBody=document.getElementById('modalBody');
