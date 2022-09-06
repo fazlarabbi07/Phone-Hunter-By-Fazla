@@ -91,17 +91,7 @@ const btnDetails=(slugId)=>{
     fetch(`https://openapi.programming-hero.com/api/phone/${specificSlug}`)
     .then(response=>response.json())
     .then(data=>eachMobile(data.data))
-    //data.data.image
-    //data.data.brand
-    //data.data.mainFeatures.storage
-    //data.data.mainFeatures.displaySize
-    //data.data.mainFeatures.chipSet
-    //data.data.mainFeatures.memory
-    //data.data.name.mainFeatures.sensors  array
-    //data.data.name.mainFeatures.storage
-    //data.data.name.releaseDate
-
-
+   
 }
 const eachMobile=(doubleData)=>{
     //Phone Name
